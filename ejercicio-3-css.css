@@ -1,0 +1,121 @@
+/* Color variables (custom properties) */
+:root {
+  --blue-gray: #1F2937;
+  --cool-gray:  #374151;
+  --warm-gray:  #78716C;
+  --amber:      #D97706;
+  --green:      #15803D;
+  --gray:       #3F3F46;
+  --red:        #DC2626;
+  --yellow:     #F59E0B;
+  --emerald:    #047857;
+  --true-gray:  #6B7280;
+  --orange:     #EA580C;
+  --lime:       #65A30D;
+  --teal:       #0F766E;
+  --fuchsia:    #C026D3;
+  --pink:       #DB2777;
+  --rose:       #E11D48;
+  --purple:     #7C3AED;
+  --violet:     #6D28D9;
+  --indigo:     #4F46E5;
+  --blue:       #1D4ED8;
+  --sky:        #0284C7;
+  --cyan:       #06B6D4;
+  --bg: #0b0e14;   /* page's background */
+  --card: #0f1320; /* container's background */
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 32px;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+}
+
+/* This class is for the main container (the card with rounded corners) */
+.palette { 
+  width: min(920px, 100%);
+  background: var(--card);
+  border-radius: 18px;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+/* Title */
+.palette__title {
+  margin: 0;
+  padding: 28px 24px 16px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 28px;
+  color: #e8eefc;
+}
+
+/* organizes the colored squares */
+.grid {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 420px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 780px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Color boxes: swatch → gives the base style (padding, text color, rounded corners). */
+.swatch {
+  border-radius: 10px;
+  padding: 16px;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--white);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .45);
+}
+
+/* make some blocks span multiple grid columns (like Blue Gray or Sky/Cyan) */
+.span-4 { grid-column: 1 / -1; }
+@media (min-width: 780px) {
+  .span-2 { grid-column: span 2; }
+}
+
+/* Background colors connected the classes to the variables */
+.blue-gray { background: var(--blue-gray); }
+.cool-gray { background: var(--cool-gray); }
+.warm-gray { background: var(--warm-gray); }
+.amber     { background: var(--amber); }
+.green     { background: var(--green); }
+.gray      { background: var(--gray); }
+.red       { background: var(--red); }
+.yellow    { background: var(--yellow); }
+.emerald   { background: var(--emerald); }
+.true-gray { background: var(--true-gray); }
+.orange    { background: var(--orange); }
+.lime      { background: var(--lime); }
+.teal      { background: var(--teal); }
+.fuchsia   { background: var(--fuchsia); }
+.pink      { background: var(--pink); }
+.rose      { background: var(--rose); }
+.purple    { background: var(--purple); }
+.violet    { background: var(--violet); }
+.indigo    { background: var(--indigo); }
+.blue      { background: var(--blue); }
+.sky       { background: var(--sky); }
+.cyan      { background: var(--cyan); }
