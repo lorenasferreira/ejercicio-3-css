@@ -28,14 +28,14 @@
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* adjusts box's size  */
 }
 body {
   margin: 0;
   padding: 32px;
-  font-family: system-ui, sans-serif;
+  font-family: sans-serif;
   background: var(--bg);
-  color: var(--white);
+  /* color: var(--white); */
   display: flex;
   justify-content: center;
 }
@@ -43,10 +43,10 @@ body {
 /* This class is for the main container (the card with rounded corners) */
 .palette { 
   width: min(920px, 100%);
-  background: var(--card);
-  border-radius: 18px;
-  padding-bottom: 20px;
-  overflow: hidden;
+  /* background: var(--card); */
+  /* border-radius: 18px; */
+  /* padding-bottom: 20px; */
+  /* overflow: hidden; */
 }
 
 /* Title */
@@ -82,12 +82,12 @@ body {
   border-radius: 10px;
   padding: 16px;
   min-height: 56px;
-  display: flex;
   align-items: center;
-  justify-content: center;
   font-weight: bold;
   color: var(--white);
   text-shadow: 0 1px 2px rgba(0, 0, 0, .45);
+  display: inline-flex;
+  justify-content: left;
 }
 
 /* make some blocks span multiple grid columns (like Blue Gray or Sky/Cyan) */
@@ -97,7 +97,9 @@ body {
 }
 
 /* Background colors connected the classes to the variables */
-.blue-gray { background: var(--blue-gray); }
+.blue-gray {
+  background: var(--blue-gray);
+}
 .cool-gray { background: var(--cool-gray); }
 .warm-gray { background: var(--warm-gray); }
 .amber     { background: var(--amber); }
@@ -112,7 +114,10 @@ body {
 .teal      { background: var(--teal); }
 .fuchsia   { background: var(--fuchsia); }
 .pink      { background: var(--pink); }
-.rose      { background: var(--rose); }
+.rose      {
+  background: var(--rose);
+  grid-column: span 2;
+}
 .purple    { background: var(--purple); }
 .violet    { background: var(--violet); }
 .indigo    { background: var(--indigo); }
